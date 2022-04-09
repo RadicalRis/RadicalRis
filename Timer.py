@@ -1,0 +1,20 @@
+# Timer With Python! By: Monu!
+from threading import Timer
+import time
+
+def  countdown (t):
+
+    while t:
+        mins, secs = divmod(t, 60)
+        timer = '{:02d}:{:02d}'.format(mins, secs)
+        print(timer, end="\r")
+        time.sleep(1)
+        t -= 1
+    
+print('A timer!')
+
+t = input("Enter the time in seconds:")
+
+countdown(int(t))
+
+print('Time Over!')
